@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jins.dao.TypeDao">
+	<select id="findAll" resultType="com.jins.entity.Type">
+		select * from jobType
+	</select>
+
+	<select id="findById" parameterType="java.lang.Integer"
+		resultType="com.jins.entity.Type">
+		select * from jobType where id = #{id}
+	</select>
+
+	<insert id="add" parameterType="com.jins.entity.Type">
+		insert into jobType
+		(typeName)values(#{typeName})
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from jobType where id =
+		#{id}
+	</delete>
+
+	<update id="update" parameterType="com.jins.entity.Type">
+		update jobType set typeName =
+		#{typeName} where id = #{id}
+	</update>
+</mapper>

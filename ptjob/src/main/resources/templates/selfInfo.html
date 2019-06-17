@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/selfInfo.css">
+<link rel="stylesheet" href="../static/css/layui.css">
+<script src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../static/js/common/vue.min.js"></script>
+</head>
+<body>
+	<ul class="layui-nav" lay-filter="">
+		<li class="layui-nav-item"><a href="index">主页</a></li>
+		<li class="layui-nav-item"><a href="publish">发布兼职</a></li>
+		<li class="layui-nav-item"><a href="selfPublish">我的发布</a></li>
+		<li class="layui-nav-item layui-this"><a href="selfInfo">个人信息</a></li>
+	</ul>
+	<div id="selfInfo" v-cloak
+		style="background-color: teal; height: 720px;">
+		<div style="background-color: silver;">
+			<font size="4" style="margin-left: 20px; color: black;"><i>个&nbsp;&nbsp;人&nbsp;&nbsp;信&nbsp;&nbsp;
+					息</i></font>
+		</div>
+		<table border="1"
+			style="margin-top: 20px; font-style: normal; color: #000000; font-weight: bolder;"
+			align="center">
+			<tr>
+				<td>姓名：</td>
+				<td><input id="userName" v-model="entity.userName" readonly></td>
+				<td>性别：</td>
+				<td><input id="userSex" v-model="entity.userSex" readonly></td>
+			</tr>
+			<tr>
+				<td>年龄：</td>
+				<td><input id="userAge" v-model="entity.userAge" readonly></td>
+				<td>学历：</td>
+				<td><input id="userDegree" v-model="entity.userDegree" readonly></td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td><input id="userHobby" v-model="entity.userHobby" readonly></td>
+				<td>特长：</td>
+				<td><input id="userSpec" v-model="entity.userSpec" readonly></td>
+			</tr>
+			<tr>
+				<td>工作经验：</td>
+				<td><input id="userExp" v-model="entity.userExp" readonly></td>
+				<td>联系方式：</td>
+				<td><input id="userTel" v-model="entity.userTel" readonly></td>
+			</tr>
+			<tr>
+				<td>微信：</td>
+				<td><input id="userWeChat" v-model="entity.userWeChat" readonly></td>
+				<td>QQ：</td>
+				<td><input id="userQQ" v-model="entity.userQQ" readonly></td>
+			</tr>
+			<tr>
+				<td>登录名：</td>
+				<td><input id="userLoginName" v-model="entity.userLoginName"
+					readonly></td>
+				<td>登录密码：</td>
+				<td><input id="userPassword" v-model="entity.userPassword"
+					readonly></td>
+			</tr>
+			<tr>
+				<td>备注：</td>
+				<td colspan="3" style="text-align: center;"><input
+					style="width: 429px;" id="remark" v-model="entity.remark"></td>
+			</tr>
+		</table>
+		<div style="text-align: center; margin-top: 20px;">
+			<button class="btn btn-default" @click="selfInfoUpdate">修改</button>
+			<button class="btn btn-default" @click="goIndex">返回</button>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/selfInfo.js"></script>
+</html>

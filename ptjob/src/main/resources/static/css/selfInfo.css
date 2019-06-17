@@ -1,0 +1,17 @@
+input {
+	font-style: normal;
+	color: white;
+	font-weight: normal;
+	background: teal;
+	border: thick;
+	text-align: center;
+	background: teal;
+}
+
+tr {
+	height: 50px;
+}
+
+td {
+	text-align: center;
+}

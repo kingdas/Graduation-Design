@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>publish a part-time job</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" type="text/css"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../static/css/common/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="../static/css/publish.css">
+<link rel="stylesheet" href="../static/css/layui.css" media="all">
+<script src="../static/js/common/jquery-3.3.1.min.js"></script>
+<!-- <script type="text/javascript" src="../static/layui.js"></script> -->
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../static/js/common/vue.min.js"></script>
+<script src="../static/js/common/bootstrap-datetimepicker.js"></script>
+<script src="../static/js/common/bootstrap-datetimepicker.zh-CN.js"></script>
+</head>
+<body style="background: teal;">
+	<ul class="layui-nav" lay-filter="">
+		<li class="layui-nav-item"><a href="index">主页</a></li>
+		<li class="layui-nav-item layui-this"><a href="publish">发布兼职</a></li>
+		<li class="layui-nav-item"><a href="selfPublish">我的发布</a></li>
+		<li class="layui-nav-item"><a href="selfInfo">个人信息</a></li>
+	</ul>
+	<div style="background-color: silver;">
+		<font size="4" style="margin-left: 50px; color: black;"><i>发&nbsp;&nbsp;布&nbsp;&nbsp;兼&nbsp;&nbsp;
+				职</i></font>
+	</div>
+	<div id="publish" v-show="showPublish" v-cloak
+		style="text-align: center; margin: 15px; margin-bottom:; height: 675px; background: silver;">
+		<br> <br>
+		<form class="form-horizontal" id="publishForm"
+			style="width: 600px; text-align: center; margin-left: 34%; margin-top:;">
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作名称:</label>
+				<div class="col-sm-10">
+					<input id="jobName" type="text" class="form-control"
+						v-model="entity.jobName" autocomplete="off" style="width:;">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作类型:</label>
+				<div class="col-sm-10">
+					<select id="jobType" class="form-control" v-model="entity.jobType">
+						<option v-for="type in types" v-bind:value="type.id">{{type.typeName}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作要求:</label>
+				<div class="col-sm-10">
+					<textarea rows="3" cols="1" id="jobRequire" class="form-control"
+						v-model="entity.jobRequire"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作地点:</label>
+				<div class="col-sm-10">
+					<input id="jobPlace" type="text" class="form-control"
+						v-model="entity.jobPlace" autocomplete="off">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作待遇:</label>
+				<div class="col-sm-10">
+					<input id="jobSalary" type="number" class="form-control"
+						v-model="entity.jobSalary">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">联系方式:</label>
+				<div class="col-sm-10">
+					<input id="jobTel" type="text" class="form-control"
+						v-model="entity.jobTel" autocomplete="off">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">时间:</label>
+				<div class="col-sm-10">
+					<input id="jobTime" type="datetime"
+						class="form_datetime form-control"
+						data-date-format="yyyy-mm-dd hh:ii:ss" v-model="entity.jobTime"
+						autocomplete="off">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">备注:</label>
+				<div class="col-sm-10">
+					<input id="jobRemark" type="text" class="form-control"
+						v-model="entity.jobRemark">
+				</div>
+			</div>
+
+			<div class="form-group"></div>
+		</form>
+		<input type="button" class="btn btn-default" value="发布" @click="save"
+			style="float:;">&nbsp;&nbsp;&nbsp;<input type="button"
+			class="btn btn-default" value="取消" @click="back" style="float:;">
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/publish.js"></script>
+</html>

@@ -1,0 +1,27 @@
+server:
+   port: 8080
+   tomcat:
+      uri-encoding: UTF-8
+      
+spring:
+  datasource:
+      url: jdbc:mysql://localhost:3306/ptjob?characterEncoding=UTF-8
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      
+  http:
+    encoding:
+       force: true
+       charset: UTF-8
+       enabled: true
+       
+  messages:
+    encoding: UTF-8     
+        
+  resources:
+    static-locations: classpath:/static/
+        
+mybatis:
+   mapper-locations: classpath*:com/jins/dao/*.xml
+   type-aliases-package: com.jins.entity 

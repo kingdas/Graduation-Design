@@ -1,0 +1,13 @@
+tr {
+	height: 40px;
+}
+
+td {
+	text-align: center;
+	width: 5%;
+}
+
+input {
+	border: thin;
+	text-align: center;
+}

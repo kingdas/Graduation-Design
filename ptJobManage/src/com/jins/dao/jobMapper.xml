@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jins.dao.JobDao">
+	<update id="update" parameterType="com.jins.entity.Job">
+		update job set jobName =
+		#{jobName},jobType = #{jobType},jobRequire =
+		#{jobRequire},jobPlace =
+		#{jobPlace},
+		jobSalary = #{jobSalary},jobTel = #{jobTel},jobTime =
+		#{jobTime},jobRemark =
+		#{jobRemark} where id = #{id}
+	</update>
+
+	<select id="findAll" resultType="com.jins.entity.Job">
+		select * from job
+	</select>
+
+	<select id="findById" parameterType="java.lang.Integer"
+		resultType="com.jins.entity.Job">
+		select * from job where id = #{id}
+	</select>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from job where id = #{id}
+	</delete>
+</mapper>

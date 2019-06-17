@@ -1,0 +1,14 @@
+.codeImg {
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	border: 1;
+	letter-spacing: 2px;
+	color: #ff0000;
+	line-height: 40px;
+	width: 90px;
+	height: 40px;
+	float: right;
+	margin-right: 10px;
+	cursor: pointer;
+}

@@ -1,0 +1,93 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jins.dao.JobDao">
+
+	<resultMap type="com.jins.entity.Job" id="baseResultMap">
+		<id column="id" property="id" />
+		<result column="jobName" property="jobName" />
+		<result column="jobType" property="jobType" />
+		<result column="jobRequire" property="jobRequire" />
+		<result column="jobPlace" property="jobPlace" />
+		<result column="jobSalary" property="jobSalary" />
+		<result column="jobTel" property="jobTel" />
+		<result column="jobTime" property="jobTime" />
+		<result column="jobRemark" property="jobRemark" />
+		<result column="userId" property="userId" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.jins.entity.Job">
+		insert into job
+		(jobName,jobType,jobRequire,jobPlace,jobSalary,jobTel,jobTime,jobRemark,userId)values
+		(#{jobName},#{jobType},#{jobRequire},#{jobPlace},#{jobSalary},#{jobTel},#{jobTime},#{jobRemark},#{userId})
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from job where id =
+		#{id}
+	</delete>
+
+	<delete id="deleteBatch">
+		delete from job where id in
+		<foreach item="ids" collection="array" open="(" separator=","
+			close=")">
+			#{ids}
+		</foreach>
+		;
+	</delete>
+
+	<update id="update" parameterType="com.jins.entity.Job">
+		update job set jobName =
+		#{jobName},jobType =
+		#{jobType},jobRequire =
+		#{jobRequire},jobPlace =
+		#{jobPlace},jobSalary
+		= #{jobSalary},jobTel =
+		#{jobTel},
+		jobTime =
+		#{jobTime},jobRemark =
+		#{jobRemark},userId =
+		#{userId} where id = #{id}
+	</update>
+
+	<select id="findById" parameterType="java.lang.Integer"
+		resultMap="baseResultMap">
+		select * from job where id = #{id}
+	</select>
+
+	<select id="findByCondition" resultMap="baseResultMap">
+		select * from job
+		<where>
+			<if test="jobType != '' and jobType != null">
+				and jobType = #{jobType}
+			</if>
+			<if test="jobName.trim() != '' and jobName != null">
+				and jobName like concat('%',#{jobName},'%')
+			</if>
+		</where>
+	</select>
+
+	<select id="findAll" resultMap="baseResultMap">
+		select * from job
+	</select>
+
+	<select id="findByUserId" resultMap="baseResultMap">
+		select * from job j
+		<where>
+			<if test="userId!=null">
+				j.`userId` = #{userId}
+			</if>
+			<if test="jobName != null and jobName.trim() != ''">
+				and j.`jobName` like concat('%',#{jobName},'%')
+			</if>
+			<if test="jobType != null and jobType!= ''">
+				and j.`jobType` = #{jobType}
+			</if>
+		</where>
+	</select>
+
+	<select id="findCounts" parameterType="java.lang.Integer"
+		resultType="java.lang.Integer">
+		select count(id) from job where userId = #{userId}
+	</select>
+
+</mapper>

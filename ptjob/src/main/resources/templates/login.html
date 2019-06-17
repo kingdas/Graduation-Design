@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>登录界面</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link rel="stylesheet"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="../static/css/login.css">
+<link rel="stylesheet" href="../static/css/layui.css" media="all">
+<script src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script src="../static/js/common/vue.min.js"></script>
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body
+	style="background-image: url('../static/images/loginPage.jpg'); background-size: cover;"
+	class="layui-anim layui-anim-scale">
+	<div id="pageHead">
+		<span>师&nbsp;院&nbsp;兼&nbsp;职&nbsp;网&nbsp;站</span>
+	</div>
+	<div id="login" v-cloak>
+		<div v-show="loginOrRegister" id="loginPage" style="display:">
+			<div id="introduction">
+				<h1>
+					<strong>Built&nbsp; for&nbsp; SQNU&nbsp; students</strong> <br>
+				</h1>
+				<br> <span><font size="5" color="black">This is a
+						website for college students to take a part-time job, you can
+						apply for a free account from here and start your trip, hope you
+						enjoy!</font></span>
+			</div>
+			<div id="loginPart">
+				<br> <br> <br>
+				<h2>
+					<font class="arrow">用&nbsp;户&nbsp;登&nbsp;录</font>
+				</h2>
+				<br> <br>
+				<div style="text-align: center;" id="loginCheck">
+					<input id="loginName" type="text" class="form-control inp"
+						placeholder="登录名" v-model="q.userLoginName" autocomplete="off">
+					<br> <input id="loginPassword" type="password"
+						class="form-control inp" placeholder="密码" v-model="q.userPassword">
+					<br>
+					<div>
+						<input id="checkCode" class="form-control inp" placeholder="验证码"
+							autocomplete="off" style="width: 150px; margin-left: 75px;">
+					</div>
+					<div id="codeImg" class="codeImg" onclick="change()"
+						style="float: left;">hello</div>
+
+					<div style="margin-left: 125px; margin-top: 30px;">
+						<input type="button" class="btn btn-default" @click="login"
+							value="登   录"> &nbsp;&nbsp;&nbsp;&nbsp; <input
+							type="button" class="btn btn-default" @click="register"
+							value="注   册">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <html lang="en" xmlns:th="http://www.thymeleaf.org"> -->
+
+		<div v-show="!loginOrRegister" id="registerPart">
+			<br>
+			<h2>
+				<font class="arrow" color="white"><strong>用&nbsp;户&nbsp;注&nbsp;册</strong></font>
+			</h2>
+			<br>
+			<form class="form-horizontal" style="margin-left:;">
+				<div class="form-group">
+					<label class="col-sm-2 control-label" style="float: left;">登录名：</label>
+					<div class="col-sm-4">
+						<input id="userLoginName" class="form-control" type="text"
+							v-model="entity.userLoginName" style="float: left;"
+							autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">密码：</label>
+					<div class="col-sm-4">
+						<input id="userPassword" class="form-control" type="password"
+							v-model="entity.userPassword" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">真实姓名：</label>
+					<div class="col-sm-4">
+						<input id="userName" class="form-control" type="text"
+							v-model="entity.userName" autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">性别：</label>
+					<div class="col-sm-4">
+						<input id="userSex" class="form-control" type="text"
+							v-model="entity.userSex" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">年龄：</label>
+					<div class="col-sm-4">
+						<input id="userAge" class="form-control" type="text"
+							v-model="entity.userAge" autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">个人爱好：</label>
+					<div class="col-sm-4">
+						<input id="userHobby" class="form-control" type="text"
+							v-model="entity.userHobby" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">个人特长：</label>
+					<div class="col-sm-4">
+						<input id="userSpec" class="form-control" type="text"
+							v-model="entity.userSpec" autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">学历：</label>
+					<div class="col-sm-4">
+						<input id="userDegree" class="form-control" type="text"
+							v-model="entity.userDegree" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">工作经验：</label>
+					<div class="col-sm-4">
+						<input id="userExp" class="form-control" type="text"
+							v-model="entity.userExp" autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">联系电话：</label>
+					<div class="col-sm-4">
+						<input id="userTel" class="form-control" type="text"
+							v-model="entity.userTel" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">微信：</label>
+					<div class="col-sm-4">
+						<input id="userWeChat" class="form-control" type="text"
+							v-model="entity.userWeChat" autocomplete="off">
+					</div>
+					<label class="col-sm-2 control-label">QQ：</label>
+					<div class="col-sm-4">
+						<input id="userQQ" class="form-control" type="text"
+							v-model="entity.userQQ" autocomplete="off">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">备注：</label>
+					<div class="col-sm-10">
+						<input id="remark" class="form-control" type="text"
+							v-model="entity.remark" autocomplete="off">
+					</div>
+				</div>
+			</form>
+			<div>
+				<input class="btn btn-default" type="button" value="注   册"
+					@click="doRegister">&nbsp;&nbsp;&nbsp;&nbsp;<input
+					class="btn btn-default" type="button" value="取   消" @click="cancel">
+			</div>
+		</div>
+	</div>
+</body>
+<script src="../static/js/login.js"></script>
+</html>

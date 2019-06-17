@@ -1,0 +1,43 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jins.dao.DeliverDao">
+
+	<resultMap type="com.jins.entity.Deliver" id="baseResultMap">
+		<id column="id" property="id" />
+		<result column="userId" property="userId" />
+		<result column="jobId" property="jobId" />
+		<result column="deliverTime" property="deliverTime" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.jins.entity.Deliver">
+		insert into deliver
+		(userId,jobId,deliverTime)values(#{userId},#{jobId},#{deliverTime})
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from deliver where id =
+		#{id}
+	</delete>
+
+	<update id="update" parameterType="com.jins.entity.Deliver">
+		update deliver set jobId =
+		#{jobId},userId =
+		#{userId},deliverTime = #{deliverTime} where id =
+		#{id}
+	</update>
+
+	<select id="findById" parameterType="java.lang.Integer"
+		resultMap="baseResultMap">
+		select * from deliver where id = #{id}
+	</select>
+
+
+	<select id="findByJobId" parameterType="java.lang.Integer"
+		resultMap="baseResultMap">
+		select * from deliver where jobId = #{jobId}
+	</select>
+
+	<select id="findAll" resultMap="baseResultMap">
+		select * from deliver
+	</select>
+</mapper>

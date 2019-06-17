@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" type="text/css"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="../static/css/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet" href="../static/css/common/ui.jqgrid.css">
+<link rel="stylesheet"
+	href="../static/css/common/jquery-ui-1.8.16.custom.css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+<script type="text/javascript"
+	src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script type="text/javascript"
+	src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../static/js/common/vue.min.js"></script>
+<script type="text/javascript"
+	src="../static/js/common/jquery.jqGrid.min.js"></script>
+<script type="text/javascript"
+	src="../static/js/common/grid.locale-cn.js"></script>
+<!-- <script type="text/javascript"
+	src="../static/js/common/jquery.jqGrid.src.js"></script>
+ -->
+</head>
+<body>
+	<div id="selfPublishDeal" v-cloak>
+		<div>
+			<!-- <form class="form-inline">
+				<input id="userName" type="text" class="form-control"
+					placeholder="输入用户名称" v-model="vm.q.userName">
+				<button type="button" class="btn btn-default" @click="query">
+					<span class="glyphicon glyphicon-search">&nbsp;查询</span>
+				</button>
+			</form> -->
+			<table id="list2"></table>
+			<div id="pager2"></div>
+			<div align="center">
+				<button class="btn btn-default btn-sm" onclick="back()">返回</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/selfPublishDeal.js"></script>
+</html>

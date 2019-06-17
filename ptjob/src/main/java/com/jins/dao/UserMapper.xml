@@ -1,0 +1,63 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jins.dao.UserDao">
+
+	<resultMap type="com.jins.entity.User" id="baseResultMap">
+		<id column="id" property="id" />
+		<result column="userName" property="userName" />
+		<result column="userSex" property="userSex" />
+		<result column="userAge" property="userAge" />
+		<result column="userDegree" property="userDegree" />
+		<result column="userHobby" property="userHobby" />
+		<result column="userSpec" property="userSpec" />
+		<result column="userExp" property="userExp" />
+		<result column="useTel" property="userTel" />
+		<result column="userWeChat" property="userWeChat" />
+		<result column="userQQ" property="userQQ" />
+		<result column="userLoginName" property="userLoginName" />
+		<result column="userPassword" property="userPassword" />
+		<result column="remark" property="remark" />
+	</resultMap>
+
+	<insert id="insert" parameterType="com.jins.entity.User">
+		insert into user
+		(userName,userSex,userAge,userDegree,userHobby,userSpec,userExp,userTel,userWeChat,userQQ,userLoginName,userPassword,remark)
+		values
+		(#{userName},#{userSex},#{userAge},#{userDegree},#{userHobby},#{userSpec},#{userExp},#{userTel},#{userWeChat},#{userQQ},#{userLoginName},#{userPassword},#{remark})
+	</insert>
+
+	<delete id="delete" parameterType="java.lang.Integer">
+		delete from user where id =
+		#{id}
+	</delete>
+
+	<update id="update" parameterType="com.jins.entity.User">
+		update user set userName =
+		#{userName},userSex =
+		#{userSex},userAge = #{userAge},userDegree =
+		#{userDegree},userHobby =
+		#{userHobby},
+		userSpec = #{userSpec},userExp =
+		#{userExp},userTel =
+		#{userTel},userWeChat = #{userWeChat},userQQ =
+		#{userQQ},userLoginName
+		= #{userLoginName},userPassword =
+		#{userPassword},remark = #{remark} where id = #{id}
+	</update>
+
+	<select id="findById" resultType="com.jins.entity.User">
+		select * from user where id =
+		#{id}
+	</select>
+
+	<select id="findByCondition" resultMap="baseResultMap">
+		select * from user
+		where
+		userLoginName = #{userLoginName} and userPassword =
+		#{userPassword}
+	</select>
+
+	<select id="findAll" resultMap="baseResultMap">
+		select * from user
+	</select>
+</mapper>

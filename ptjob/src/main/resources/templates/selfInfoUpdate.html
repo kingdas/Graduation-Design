@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" type="text/css"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<script src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script src="../static/js/common/vue.min.js"></script>
+</head>
+<body style="background: teal;">
+	<div style="background-color: silver;">
+		<font size="4" style="margin-left: 20px; color: black;"><i>个&nbsp;&nbsp;人&nbsp;&nbsp;信&nbsp;&nbsp;
+				息&nbsp;&nbsp;修&nbsp;&nbsp;改</i></font>
+	</div>
+	<div id="selfInfoUpdate" v-cloak style="text-align: center;">
+		<br> <br> <br>
+		<form class="form-horizontal" style="width: 800px; margin-left: 20%;">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">真实姓名：</label>
+				<div class="col-sm-4">
+					<input id="userName" class="form-control" type="text"
+						v-model="entity.userName">
+				</div>
+				<label class="col-sm-2 control-label">性别：</label>
+				<div class="col-sm-4">
+					<input id="userSex" class="form-control" type="text"
+						v-model="entity.userSex">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">年龄：</label>
+				<div class="col-sm-4">
+					<input id="userAge" class="form-control" type="text"
+						v-model="entity.userAge">
+				</div>
+				<label class="col-sm-2 control-label">个人爱好：</label>
+				<div class="col-sm-4">
+					<input id="userHobby" class="form-control" type="text"
+						v-model="entity.userHobby">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">个人特长：</label>
+				<div class="col-sm-4">
+					<input id="userSpec" class="form-control" type="text"
+						v-model="entity.userSpec">
+				</div>
+				<label class="col-sm-2 control-label">学历：</label>
+				<div class="col-sm-4">
+					<input id="userDegree" class="form-control" type="text"
+						v-model="entity.userDegree">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">工作经验：</label>
+				<div class="col-sm-4">
+					<input id="userExp" class="form-control" type="text"
+						v-model="entity.userExp">
+				</div>
+				<label class="col-sm-2 control-label">联系电话：</label>
+				<div class="col-sm-4">
+					<input id="userTel" class="form-control" type="text"
+						v-model="entity.userTel">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">微信：</label>
+				<div class="col-sm-4">
+					<input id="userWeChat" class="form-control" type="text"
+						v-model="entity.userWeChat">
+				</div>
+				<label class="col-sm-2 control-label">QQ：</label>
+				<div class="col-sm-4">
+					<input id="userQQ" class="form-control" type="text"
+						v-model="entity.userQQ">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">登录名：</label>
+				<div class="col-sm-4">
+					<input id="userLoginName" class="form-control" type="text"
+						v-model="entity.userLoginName">
+				</div>
+				<label class="col-sm-2 control-label">密码：</label>
+				<div class="col-sm-4">
+					<input id="userPassword" class="form-control" type="text"
+						v-model="entity.userPassword">
+				</div>
+			</div>
+			<br>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">备注：</label>
+				<div class="col-sm-10">
+					<input id="remark" class="form-control" type="text"
+						v-model="entity.remark">
+				</div>
+			</div>
+			<br>
+			<div class="form-group"></div>
+		</form>
+		<input class="btn btn-default" type="button" value="确定"
+			@click="update">&nbsp;&nbsp;&nbsp;&nbsp;<input
+			class="btn btn-default" type="button" value="返回" @click="selfInfo">
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/selfInfoUpdate.js"></script>
+</html>

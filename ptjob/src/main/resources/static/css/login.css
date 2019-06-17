@@ -1,0 +1,122 @@
+#pageHead {
+	font-family: Times;
+	font-style: italic;
+	font-size: 38px;
+	color: #7b9e61;
+	background-color: silver;
+	width: 100%;
+	height: 50px;
+}
+
+#pageHead>span {
+	margin-left: 10%;
+}
+
+#loginPage {
+	width: 75%;
+	height: 400px;
+	margin-top: 7%;
+	margin-left: 10%;
+}
+
+#introduction {
+	text-align:;
+	vertical-align: middle;
+	width: 600px;
+	height: 400px;
+	float: left;
+}
+
+#introduction>h1 {
+	color: white;
+	margin-top: 50px;
+	font-size: 60px;
+}
+
+#loginPart {
+	text-align: center;
+	align-content: center;
+	align-self: center;
+	align-items: center;
+	width: 400px;
+	height: 400px;
+	background: #c0c0c0;
+	float: right;
+	-moz-border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+}
+
+.inp {
+	width: 260px;
+	height: 40px;
+}
+
+#loginCheck {
+	text-align: center;
+}
+
+#loginCheck>div {
+	float: left;
+}
+
+#loginCheck>input {
+	margin-left: 75px;
+}
+
+.codeImg {
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	border: 1;
+	letter-spacing: 2px;
+	color: #0080ff;
+	line-height: 40px;
+	width: 90px;
+	height: 40px;
+	float: right;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+#registerPart {
+	text-align: center;
+	margin-left: 380px;
+	width: 800px;
+}
+
+/* #registerPart>h2 {
+	text-align: center;
+}
+
+#registerPart>form {
+	text-align: center;
+}
+ */
+#registerPart>input {
+	float: left;
+}
+
+label {
+	font: normal;
+	color: red;
+}
+
+.form-group>input {
+	width: 260px;
+}

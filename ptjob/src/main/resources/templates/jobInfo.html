@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link rel="stylesheet"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="../static/css/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/jobInfo.css">
+<script type="text/javascript"
+	src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script type="text/javascript"
+	src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../static/js/common/vue.min.js"></script>
+</head>
+<body>
+	<div id="jobInfo" style="text-align: center;" align="center">
+		<table border="1" style="margin-top: 20px; text-align: center;">
+			<tr>
+				<td>兼职名称</td>
+				<td><input id="jobName" v-model="job.jobName" readonly></td>
+				<td>兼职类型</td>
+				<td><input id="jobType" v-model="job.jobType" readonly></td>
+			</tr>
+			<tr>
+				<td>工作要求</td>
+				<td><input id="jobRequire" v-model="job.jobRequire" readonly></td>
+				<td>工作地点</td>
+				<td><input id="jobPlace" v-model="job.jobPlace" readonly></td>
+			</tr>
+			<tr>
+				<td>工资</td>
+				<td><input id="jobSalary" v-model="job.jobSalary" readonly></td>
+				<td>联系方式</td>
+				<td><input id="jobTel" v-model="job.jobTel" readonly></td>
+			</tr>
+			<tr>
+				<td>时间</td>
+				<td><input id="jobTime" v-model="job.jobTime" readonly></td>
+				<td>备注</td>
+				<td><input id="jobRemark" v-model="job.jobRemark" readonly></td>
+			</tr>
+			<tr>
+				<td colspan=4 style="text-align: center;"><strong>发布者信息</strong></td>
+			</tr>
+			<tr>
+				<td>用户名</td>
+				<td><input id="userName" v-model="user.userName" readonly></td>
+				<td>性别</td>
+				<td><input id="userSex" v-model="user.userSex" readonly></td>
+			</tr>
+			<tr>
+				<td>年龄</td>
+				<td><input id="userAge" v-model="user.userAge" readonly></td>
+				<td>爱好</td>
+				<td><input id="userHobby" v-model="user.userHobby" readonly></td>
+			</tr>
+			<tr>
+				<td>特长</td>
+				<td><input id="userSpec" v-model="user.userSpec" readonly></td>
+				<td>学历</td>
+				<td><input id="userDegree" v-model="user.userDegree" readonly></td>
+			</tr>
+			<tr>
+				<td>工作经验</td>
+				<td><input id="userExp" v-model="user.userExp" readonly></td>
+				<td>联系方式</td>
+				<td><input id="userTel" v-model="user.userTel" readonly></td>
+			</tr>
+			<tr>
+				<td>微信</td>
+				<td><input id="userWeChat" v-model="user.userWeChat" readonly></td>
+				<td>QQ</td>
+				<td><input id="userQQ" v-model="user.userQQ" readonly></td>
+			</tr>
+		</table>
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/jobInfo.js"></script>
+</html>

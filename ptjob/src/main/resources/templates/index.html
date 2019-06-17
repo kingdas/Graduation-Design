@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html" charset="UTF-8">
+<title>主页</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link rel="stylesheet"
+	href="../static/bootstrap-3.3.7-dist/css/bootstrap.css">
+<link rel="stylesheet" href="../static/css/ui.jqgrid-bootstrap.css">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/layui.css">
+<script type="text/javascript"
+	src="../static/js/common/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../static/layui.all.js"></script>
+<script type="text/javascript"
+	src="../static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../static/js/common/vue.min.js"></script>
+</head>
+<body style="font-style: inherit; color: white; background: teal;">
+
+	<ul class="layui-nav" style="float:;" lay-filter="">
+		<li class="layui-nav-item layui-this"><a href="index">主页</a></li>
+		<li class="layui-nav-item"><a href="publish">发布兼职</a></li>
+		<li class="layui-nav-item"><a href="selfPublish">我的发布</a></li>
+		<li class="layui-nav-item"><a href="selfInfo">个人信息</a></li>
+	</ul>
+
+	<div id="index" class="layui-anim layui-anim-up">
+		<div id="header" class="form-inline"
+			style="margin-top: 20px; margin-bottom: 20px;">
+			<input id="jobFind" type="text" class="form-control"
+				style="width: 75%; margin-left: 42px;" placeholder="寻找兼职"> <span
+				style="margin-left: 100px; margin-right:;">当前用户：</span>&nbsp;&nbsp;&nbsp;<u><i><span
+					id="loginName"></span></i></u>
+			<button class="btn btn-default btn-xs" style="margin-left: 20px;"
+				onclick="logout()">
+				<font color="red">注销</font>
+			</button>
+		</div>
+		<hr>
+		<div>
+			<div class="layui-carousel" id="test1"
+				style="width: 1200px; height: 450px; margin-left: 10px; margin-top: 5px; display: inline-block;">
+				<div carousel-item>
+					<div>
+						<a href="https://sq.58.com/" target="_blank"><img
+							alt="cannot load the picture" src="../static/images/L1.jpg"></a>
+					</div>
+					<div>
+						<a href="http://bj.ganji.com/" target="_blank"><img
+							alt="cannot load the picture" src="../static/images/L2.jpg"></a>
+					</div>
+					<div>
+						<a href="https://www.zhaopin.com/" target="_blank"> <img
+							alt="cannot load the picture" src="../static/images/L3.jpg"></a>
+					</div>
+					<div>
+						<a href="https://www.51job.com/" target="_blank"> <img
+							alt="cannot load the picture" src="../static/images/L4.jpg"></a>
+					</div>
+					<div>
+						<a href="https://www.zhipin.com/" target="_blank"> <img
+							alt="cannot load the picture" src="../static/images/L5.jpg"></a>
+					</div>
+				</div>
+			</div>
+			<div
+				style="display: inline-block; height: 480px; width: 1px; border-left: 1px #000 solid; margin-left: 10px;">
+			</div>
+			<div style="display: inline-block; width: 270px; margin-left: 5px;">
+				<p style="margin-left: 10px;">资&nbsp;讯</p>
+				<hr>
+				<div
+					style="display: inline-block; margin-left: 5px; width: 270px; text-align: left;">
+
+					<a href="https://tech.163.com/19/0507/09/EEIH9TS200097U7T.html"
+						style="color: orange;">库克:苹果不是垄断者，相比对手..</a> <br> <br> <a
+						href="http://gz.house.163.com/photonew/5N620087/78908.html#p=EC7Q29495N620087NOS"
+						style="color: orange;">中国未来超级城市阵营 这五个城市概率很大</a> <br> <br>
+					<a href="http://money.163.com/19/0507/06/EEI9FJAO002580S6.html"
+						style="color: orange;">中美贸易磋商又生波澜 中方态度依旧</a> <br> <br> <a
+						href="http://money.163.com/16/0729/14/BT5BFSIE00254SUA.html"
+						style="color: white;">境外赌博网站结算利用支付宝通道再遭举报</a> <br> <br>
+					<a href="https://money.163.com/19/0506/09/EEG1450000258299.html"
+						style="color: white;">为什么很多人不喜欢调休小长假？</a> <br> <br> <a
+						href="http://tech.163.com/13/0623/08/921QIGLS000915BF.html"
+						style="color: white;">谷歌欧洲总部办公环境令人叹为观止</a> <br> <br> <a
+						href="http://tech.163.com/15/0206/12/AHP5SL39000915BF.html"
+						style="color: white;">人人影视宣布转型 更名为“人人美剧”</a> <br> <br> <a
+						href="http://auto.163.com/19/0507/08/EEIDU7S1000884MM.html"
+						style="color: white;">"报废机动车回收管理办法"公布 6月1日...</a> <br> <br>
+					<a href="http://gz.house.163.com/19/0506/11/EEG8DM5D008786F3.html"
+						style="color: white;">房市地市双升温 中国二线城市“春风”未停</a> <br> <br>
+					<a href="http://gz.house.163.com/photonew/5N620087/78874.html"
+						style="color: white;">南沙大桥正式通车 预计前期日均车流5万辆</a> <br> <br>
+					<a href="http://travel.163.com/photoview/17KK0006/2140722.html"
+						style="color: white;">去旅行怎能错过这10个绝美童话小镇</a> <br> <br> <a
+						href="http://ent.163.com/19/0503/18/EE98MR1300038FO9.html"
+						style="color: white;">《复联4》票房超《红海行动》进内地票...</a> <br> <br>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div id="body" style="margin: 20px;">
+			<table id="jobList" class="table table" style="width: 100%;">
+				<thead>
+					<tr>
+						<th>兼职名称</th>
+						<th>兼职类型</th>
+						<th>岗位要求</th>
+						<th>工作地点</th>
+						<th>待遇</th>
+						<th>发布时间</th>
+						<th>联系方式</th>
+						<th>备注</th>
+						<th>查看</th>
+						<th>投递</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" language="javascript"
+	src="../static/js/index.js" charset="utf-8"></script>
+</html>
